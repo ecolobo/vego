@@ -1,0 +1,67 @@
+<ion-view>
+	<ion-nav-title align-title="center">
+		<img src="img/logo.png" height="80%" style="margin-top:5px;" alt="">
+	</ion-nav-title>
+  <ion-header-bar align-title="center" class="bar-subheader bar-inverse" align-title="center">
+    <h1 class="title">{{tituloTela}}</h1>
+    <button class="button icon fa fa-search" ng-if="pesquisa" ng-click="abrirModalFiltrosPesquisa()"></button>
+  </ion-header-bar>
+  <ion-content>
+        <h4 class="text-center title" ng-if="animais.length ==0 && carregado">Nenhum resultado encontrado</h4>
+ <p class="padding">O VeGo apenas consulta, NAO modifica a lista de terceiros! Consulte sempre o site dos responsaveis.</p>
+
+    <div ng-show="retorno != 'texto'">
+      <a style="width:96%; margin:0 2%; float:left; position:relative; color:#000;" ng-repeat="animal in animais">
+        <div>
+          <div style="width:10%; height:130px; float:left; position: relative; display: inline-block; background-color:#398fd1; color:#fff; float:left; padding:7px 10px; border-radius:25px 0 0 25px;">
+            <span style="position: absolute; top: 50%; left: 50%; -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg); -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg); transform: translateX(-50%) translateY(-50%) rotate(-90deg); white-space: nowrap;">{{animal.serie}} {{animal.rgn}}</span>
+          </div>
+        </div>
+        <div style="width:80%; float:left; border-bottom:2px dashed #ccc;">
+          <div style="width:100%; height:30px; padding:5px; float:left; background-color:#43aeff; color:#fff; line-height:20px; font-size:20px;">
+            <div style="width:15%; float:left; text-align:center; margin-right:10px;">
+              <img src="img/vaca.png" height="20" ng-if="animal.sx == 2" alt="">
+              <img src="img/touro.png" height="20" ng-if="animal.sx == 1" alt="">
+            </div>
+            <h3 style="color:#fff; margin:0; font-size:18px;">NOME DA LISTA INCLUIR!!!!</h3>
+          </div>
+          <div style="width:100%; height:25px; padding:5px; float:left; background-color:#ddd; font-size:12px;">
+            <div class="row" style="padding:0;">
+              <div class="col-99 text-center" style="padding:0;">
+                Atualizada em: {{animal.atualizacao}}
+              </div>
+            </div>
+          </div>
+          <div style="width:auto; height:auto; padding:auto; float:left; background-color:#eaeaea; font-size:12px;">
+            <div class="row" style="padding:0;">
+              <div class="col-99 text-center" style="padding:0;">
+                Fonte:  {{animal.fonte}}
+              </div>
+            </div>
+          </div>
+          <div style="width:100%; height:25px; padding:5px; float:left; background-color:#ddd; font-size:12px;">
+            <div class="row" style="padding:0;">
+
+            </div>
+          </div>
+          <div style="width:auto; height:auto; padding:auto; float:left; background-color:#eaeaea; font-size:12px;">
+            <div class="row" style="padding:0;">
+
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="width:10%; height:130px; line-height:120px; float:left; background-color:#398fd1; color:#fff; float:left; padding:7px 10px; border-radius:0 25px 25px 0;">
+
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </a>
+
+      <ion-infinite-scroll ng-if="carregado" on-infinite="carregarMaisAnimais()" distance="10%"></ion-infinite-scroll>
+    </div>
+<div></div><div></div><div></div>
+                </div>
+  </ion-content>
+</ion-view>

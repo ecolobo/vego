@@ -1,0 +1,38 @@
+<ion-view ion-hide-navbar="true" style="background: url(img/bg-login.png) no-repeat center center #057dda; background-size: cover;">
+  <ion-content>
+
+    <p class="text-center">
+      <img src="img/logo-login.png" width="60%" style="margin:20px 0 0px 0;" alt="">
+    </p>
+
+    <form novalidate ng-submit="efetuarLogin(formLogin, dadosLogin)" class="formLogin" name="formLogin">
+      <div class="list" style="margin:0;">
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;">
+          <span class="input-label" style="color:#fff;">Usuário</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #fff; width:96%; color:#fff;" ng-model="dadosLogin.username" required>
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;">
+          <span class="input-label" style="color:#fff;">Senha</span>
+          <input type="password" style="background-color:transparent; border-bottom:1px solid #fff; width:96%; color:#fff;" ng-model="dadosLogin.password" required>
+        </label>
+        <label class="item text-center" style="background-color: transparent; border:none; padding-bottom:0; margin-bottom:0;">
+          <button type="submit" class="button button-block button-positive"><i class="fa fa-sign-in"></i> Entrar</button>
+        </label>
+      </div>
+      <div class="row">
+        <div class="col text-left">
+          <span ng-click="esqueceuSuaSenha()" class="cadastre-se" style="width:100%; float:left;">Esqueceu sua senha?</span><br/>
+        </div>
+        <div class="col text-right">
+          <span ng-click="cadastreSe()" class="cadastre-se">Cadastre-se</span>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+
+  <ion-footer-bar class="text-center bar-footer-login">
+    <p>
+      <img src="img/logo-ctag.jpg" height="60" alt="">
+    </p>
+  </ion-footer-bar>
+</ion-view>

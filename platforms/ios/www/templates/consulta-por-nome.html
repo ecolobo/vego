@@ -1,0 +1,43 @@
+<ion-view>
+	<ion-nav-title  align-title="center">
+		<img src="img/logo.png" height="80%" style="margin-top:5px;" alt="">
+	</ion-nav-title>
+  <ion-header-bar align-title="center" class="bar-subheader bar-inverse" align-title="center">
+    <h1 class="title">Pesquisa Listas Veganas</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list list-form-pesquisa">
+      <div class="row">
+        <div class="col">
+          <label class="item item-input item-floating-label">
+            <label class="input-label">Nome / Série / RGN / RGD</label>
+            <input ion-autocomplete type="text" readonly="readonly" class="ion-autocomplete" autocomplete="off" ng-model="camposPesquisa.animal_codigo" items-method="callbackMethod(query)" max-selected-items="1" placeholder="Nome ou parte do produto ou marca." />
+            <!--<input type="text" ng-model="camposPesquisa.animal_codigo" ng-change="mudou();" placeholder="Nome / Série / RGN / RGD">-->
+          </label>
+        </div>
+      </div>
+
+      <div class="padding">
+        <a type="submit" class="button button-ancp button-block" ng-click="pesquisar()"><i class="fa fa-search"></i> Go Vego, procurar nas listas!</a>
+                </div>
+
+        <p class="padding">Não encontrou seu produto em nenhuma lista? Inclua ele que os VegaNators irão avaliá-lo, e se constatado que é vegano será incluído na lista Vego.<p>
+        <div class="padding">
+            <a ng-click="cadastreSe()"  class="button button-ancp button-block" "><i class="fa fa-search"></i> Go Vego, incluir produtos!</a>
+    </div>
+
+        <p class="padding">Clique abaixo para conhecer a relacao de listas que sao consultadas pelo Vego.<p>
+      <div class="padding">
+        <a type="submit" class="button button-ancp button-block" ng-click="pesquisar3()"><i class="fa fa-search"></i> Go Vego mostre as listas!</a>
+                </div>
+        <div class="list list-form-pesquisa">
+            <p class="padding">Solicite o cadastro de uma nova lista pelo botao abaixo.</p>
+
+      <div class="padding">
+        <div class="padding">
+            <a ng-click="cadastroLista()"  class="button button-ancp button-block" "><i class="fa fa-search"></i> Go Vego, cadastre minha lista!</a>
+    </div>
+  </ion-content>
+
+</ion-view>
+

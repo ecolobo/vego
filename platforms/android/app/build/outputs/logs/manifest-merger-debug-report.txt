@@ -1,0 +1,163 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\9eaec27774dec84fc0ffbe074c822387\AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5a580e05ae07a1408a57bfedbd00cd99\AndroidManifest.xml:17:1-22:12
+MERGED from [:CordovaLib] D:\Projetos\DANIEL\vego\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\91a2bc69800f4dbbdfa860d1359a2182\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\1e66dae9275375f020fdaee3d523a387\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\abbfb0a63f48c3f3b9541b2d758380ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\417e20ea02e400f50e50f68cfff102da\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\3e791e3aff9c21e99969d36ac2803d44\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d9306bd5b602beececdf2d6041ee6c53\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\14ab6647af9618d6420605256c1be0dd\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\184dd25cf924802769eb2400d1e2071f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e0f313807dc3df3d2bdd3b4772a22b36\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+	package
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:100-132
+		INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:74-99
+		INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml
+	android:hardwareAccelerated
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
+	xmlns:android
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:133-191
+	android:versionCode
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:2:46-73
+		INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml
+supports-screens
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:5-191
+	android:largeScreens
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:49-76
+	android:smallScreens
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:132-159
+	android:normalScreens
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:77-105
+	android:xlargeScreens
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:160-188
+	android:resizeable
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
+	android:anyDensity
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
+uses-permission#android.permission.INTERNET
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:5:5-14:19
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\9eaec27774dec84fc0ffbe074c822387\AndroidManifest.xml:11:5-12:19
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\9eaec27774dec84fc0ffbe074c822387\AndroidManifest.xml:11:5-12:19
+	android:supportsRtl
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
+	android:label
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:5:81-113
+	android:hardwareAccelerated
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
+	android:icon
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
+activity#com.nicolasfontes.vego.MainActivity
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
+	android:screenOrientation
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:194-230
+	android:label
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
+	android:launchMode
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:135-165
+	android:windowSoftInputMode
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:294-336
+	android:configChanges
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:19-96
+	android:theme
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:231-293
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:6:166-193
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
+	android:label
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:7:28-65
+action#android.intent.action.MAIN
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:8:17-69
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:8:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
+activity#com.google.zxing.client.android.CaptureActivity
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:9-311
+	android:clearTaskOnLaunch
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:19-51
+	android:windowSoftInputMode
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:261-308
+	android:exported
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:114-138
+	android:configChanges
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:52-113
+	android:theme
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:202-260
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:12:139-201
+activity#com.google.zxing.client.android.encode.EncodeActivity
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:13:9-112
+	android:label
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:13:19-40
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:13:41-109
+uses-sdk
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:15:5-74
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\9eaec27774dec84fc0ffbe074c822387\AndroidManifest.xml:7:5-9:41
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\9eaec27774dec84fc0ffbe074c822387\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5a580e05ae07a1408a57bfedbd00cd99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5a580e05ae07a1408a57bfedbd00cd99\AndroidManifest.xml:20:5-44
+MERGED from [:CordovaLib] D:\Projetos\DANIEL\vego\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] D:\Projetos\DANIEL\vego\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\91a2bc69800f4dbbdfa860d1359a2182\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\91a2bc69800f4dbbdfa860d1359a2182\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\1e66dae9275375f020fdaee3d523a387\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\1e66dae9275375f020fdaee3d523a387\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\abbfb0a63f48c3f3b9541b2d758380ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\abbfb0a63f48c3f3b9541b2d758380ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\417e20ea02e400f50e50f68cfff102da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\417e20ea02e400f50e50f68cfff102da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\3e791e3aff9c21e99969d36ac2803d44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\3e791e3aff9c21e99969d36ac2803d44\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d9306bd5b602beececdf2d6041ee6c53\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d9306bd5b602beececdf2d6041ee6c53\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\14ab6647af9618d6420605256c1be0dd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\14ab6647af9618d6420605256c1be0dd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\184dd25cf924802769eb2400d1e2071f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\184dd25cf924802769eb2400d1e2071f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e0f313807dc3df3d2bdd3b4772a22b36\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Ficolas Nontes\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e0f313807dc3df3d2bdd3b4772a22b36\AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:15:42-71
+	android:minSdkVersion
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:15:15-41
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:16:5-79
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:16:22-76
+uses-permission#android.permission.CAMERA
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:17:5-65
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:17:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:18:5-69
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:18:22-66
+uses-feature#android.hardware.camera
+ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:19:5-84
+	android:required
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:19:58-81
+	android:name
+		ADDED from D:\Projetos\DANIEL\vego\platforms\android\app\src\main\AndroidManifest.xml:19:19-57

@@ -1,0 +1,81 @@
+<ion-view>
+  <ion-nav-title><img src="img/logo.png" height="80%" style="margin-top:5px;" alt=""></ion-nav-title>
+  <ion-header-bar align-title="center" class="bar-subheader bar-inverse" align-title="center">
+    <h1 class="title">Bem vindo, {{nome}}</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list class="lista-links">
+
+      <ion-item ng-if="cadastroAncp" href="#/app/consulta-por-nome" style="background-color:#cbcbcb !important; border-bottom:4px solid #3a5914;">
+        <div class="row">
+          <div class="col text-center" style="border-right:2px solid #4987b6;">
+            <img src="img/icones/icone-animais-lideres.png" width="60%" alt="">
+          </div>
+          <div class="col" style="font-size:18px; line-height:18px; white-space:nowrap; color:#3a5914; text-align:left; position: relative;">
+            <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">Consulta<br/>Listas de<br/>Produtos<br/>Veganos</span>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item ng-if="cadastroAncp" href="#/app/consulta-avancada-de-touros/consulta-avancada" style="background-color:#dbdbdb !important; border-bottom:4px solid #3a5914;">
+        <div class="row">
+          <div class="col" style="font-size:18px; line-height:18px; white-space:nowrap; color:#3a5914; text-align:right; position: relative;">
+            <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">Comida<br/>caseira?<br/>Veja <br/> ingredientes.</span>
+          </div>
+          <div class="col text-center" style="border-left:2px solid #4987b6;">
+            <img src="img/icones/icone-pesquisa-detalhada.png" width="60%" alt="">
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item ng-if="cadastroAncp" href="#/app/veganator" style="background-color:#ebebeb !important; border-bottom:4px solid #3a5914;">
+        <div class="row">
+          <div class="col text-center" style="border-right:2px solid #4987b6;">
+            <img src="img/icones/icone-pesquisa-por-nome.png" width="60%" alt="">
+          </div>
+          <div class="col" style="font-size:18px; line-height:18px; white-space:nowrap; color:#3a5914; text-align:right; position: relative;">
+            <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">VegaNator,<br/>"Hasta<br/>la vegan<br/>baby!</span>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item href="#/app/animais-salvos" style="background-color:#f2f2f2 !important; border-bottom:4px solid #3a5914;">
+        <div class="row">
+          <div class="col" style="font-size:18px; line-height:18px; white-space:nowrap; color:#3a5914; text-align:center; position: relative;">
+            <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">Receitas<br/>Veganas<br/>Offline</span>
+          </div>
+          <div class="col text-center" style="border-left:2px solid #4987b6;">
+            <img src="img/icones/icone-animais-salvos.png" width="60%" alt="">
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item href="#/app/consulta-avancada-de-touros/consulta-publica" style="background-color:#fbfbfb !important; border-bottom:4px solid #3a5914;">
+        <div class="row">
+          <div class="col text-center" style="border-right:2px solid #3a5914;">
+            <img src="img/icones/icone-consulta-publica.png" width="60%" alt="">
+          </div>
+          <div class="col" style="font-size:18px; line-height:18px; white-space:nowrap; color:#3a8fd2; text-align:left; position: relative;">
+            <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">Consulta<br/>Pública de<br/>Touros</span>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item href="#/app/consulta-publica-por-nome" style="background-color:#fbfbfb !important;">
+        <div class="row">
+          <div class="col" style="font-size:18px; line-height:18px; white-space:nowrap; color:#3a8fd2; text-align:right; position: relative;">
+            <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">Consulta<br/>Pública de<br/>Touros Por<br/>Nome</span>
+          </div>
+          <div class="col text-center" style="border-left:2px solid #4987b6;">
+            <img src="img/icones/icone-pesquisa-por-nome.png" width="60%" alt="">
+          </div>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+
+  <ion-footer-bar class="bar-footer-principal" ng-click="efetuarLogout()">
+    <p><i class="fa fa-sign-out fa-2x"></i> <span>Sair</span></p>
+  </ion-footer-bar>
+</ion-view>

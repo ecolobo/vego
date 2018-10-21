@@ -1,0 +1,34 @@
+<ion-modal-view style="background: url(img/bg-login.png) no-repeat center center; background-size: cover;">
+  <ion-header-bar class="bar-stable bar bar-header bar-pneuz">
+    <h1 class="title" style="color:#fff !important">Cadastre seu produto</h1>
+    <button class="button button-icon fa fa-times" style="color:#fff !important" ng-click="modalCadastro.hide()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form novalidate ng-submit="cadastrarUsuario(formCadastro, dadosCadastro)" name="formCadastro">
+      <div class="list">
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" ng-class="{ 'input-error' : formCadastro.produto.$invalid && formCadastro.$submitted }">
+          <span class="input-label" style="color:#fff;">Produto</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #fff; width:96%; color:#fff;" name="produto" ng-model="dadosCadastro.produto" required ng-minlength="5">
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" ng-class="{ 'input-error' : formCadastro.empresa.$invalid && formCadastro.$submitted }">
+          <span class="input-label" style="color:#fff;">Empresa</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #fff; width:96%; color:#fff;" name="empresa" ng-model="dadosCadastro.empresa" required ng-minlength="5">
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" ng-class="{ 'input-error' : formCadastro.usuario.$invalid && formCadastro.$submitted }">
+          <span class="input-label" style="color:#fff;">Usuario</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #fff; width:96%; color:#fff;" id="usuario" name="usuario" ng-model="dadosCadastro.usuario" required ng-minlength="4" >
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" ng-class="{ 'input-error' : formCadastro.ingrediente.$invalid && formCadastro.$submitted }">
+          <span class="input-label" style="color:#fff;">Ingrediente</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #fff; width:96%; color:#fff;" id="ingrediente" name="ingrediente" ng-model="dadosCadastro.ingrediente" required ng-minlength="4" match-password="senha">
+        </label>
+        <label>
+          <div class="padding">
+            <button class="button button-block button-positive" style="margin-bottom:0;"><i class="fa fa-save"></i> Salvar</button>
+          </div>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+

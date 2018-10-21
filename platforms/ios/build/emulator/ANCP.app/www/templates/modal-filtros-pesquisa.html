@@ -1,0 +1,48 @@
+<ion-modal-view style="background: url(img/bg-login.png) no-repeat center center; background-size: cover;">
+  <ion-header-bar class="bar-stable bar bar-header bar-pneuz">
+    <h1 class="title" style="color:#fff !important">Filtros Pesquisa</h1>
+    <button class="button button-icon fa fa-times" style="color:#fff !important" ng-click="modalFiltrosPesquisa.hide()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form novalidate ng-submit="filtrarAnimais(formFiltros, filtrosPesquisa)" name="formFiltros">
+      <div class="list">
+        <label class="item item-input item-select" style="background-color:transparent; border:none; margin-top:5px;" ng-class="{ 'input-error' : formFiltros.fazenda.$invalid && formFiltros.$submitted }">
+          <div class="input-label" style="color:#fff;">
+            Fazenda
+          </div>
+          <select ng-model="filtrosPesquisa.fazenda" required ng-minlength="1">
+            <option value="">Selecione</option>
+            <option value="{{fazenda._id.nfa}}" ng-repeat="fazenda in listaFazendas">{{fazenda._id.nfa}} - {{fazenda._id.nome}}</option>
+          </select>
+        </label>
+        <hr>
+        <label class="item item-input item-select" style="background-color:transparent; border:none; margin-top:5px;">
+          <div class="input-label" style="color:#fff;">
+            Sexo
+          </div>
+          <select ng-model="filtrosPesquisa.sexo">
+            <option  ng-repeat="sexo in listaSexos" value="{{sexo.valor}}">{{sexo.nome}}</option>
+          </select>
+        </label>
+        <hr>
+        <label class="item item-input item-select" style="background-color:transparent; border:none; margin-top:5px;">
+          <div class="input-label" style="color:#fff;">
+            Status
+          </div>
+          <select ng-model="filtrosPesquisa.status">
+            <option ng-repeat="status in listaStatus" value="{{status.valor}}" >{{status.nome}}</option>
+          </select>
+        </label>
+        <hr>
+        <label>
+          <div class="padding">
+            <button class="button button-block button-positive" style="margin-bottom:0;"><i class="fa fa-search"></i> Filtrar</button>
+          </div>
+        </label>
+      </div>
+    </form>
+    <div class="padding">
+      <button class="button button-block button-assertive" ng-click="eliminarFiltros()" style="margin-bottom:0;"><i class="fa fa-times"></i> Eliminar Filtros</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

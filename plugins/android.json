@@ -1,0 +1,38 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    }
+  },
+  "dependent_plugins": {
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.vitorbraga.ancp"
+    }
+  }
+}

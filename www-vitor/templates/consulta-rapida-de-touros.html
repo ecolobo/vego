@@ -1,0 +1,15 @@
+<ion-view>
+	<ion-nav-title>
+		<img src="img/logo.png" height="80%" style="margin-top:5px;" alt="">
+	</ion-nav-title>
+  <ion-header-bar align-title="center" class="bar-subheader bar-inverse" align-title="center">
+    <h1 class="title">Animais Lideres</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="row" style="flex-wrap: wrap; padding:0;">
+      <a ng-repeat="pesquisa in pesquisaRapida track by $index" href="#/app/consulta-rapida-de-touros/{{$index}}" class="col-33 text-center" style="background-color:#e4f3ff; height:33vw; position:relative; font-weight:bold; color:#216eab; font-size:20px; border:2px solid #fff;">
+        <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);"><img src="{{pesquisa.icone}}" width="{{pesquisa.wIcone}}%" alt=""><br/>{{pesquisa.nome}}</span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

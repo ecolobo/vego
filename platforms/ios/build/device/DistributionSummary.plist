@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ANCP.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>B86D972849C45BD9571D0559AA1317C6676CFC0A</string>
+				<key>dateExpires</key>
+				<string>20/06/18</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>MH843QDG63.com.vitorbraga.ancp</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>MH843QDG63</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>ANCP.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>f5ffd86b-634b-4982-ace5-2f2cd74833cc</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>MH843QDG63</string>
+				<key>name</key>
+				<string>Vitor M. Braga</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

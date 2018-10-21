@@ -1,0 +1,536 @@
+<ion-view>
+	<ion-nav-title>
+		<img src="img/logo.png" height="80%" style="margin-top:5px;" alt="">
+	</ion-nav-title>
+  <ion-content class="info-animal">
+    <h3>{{animal.nome}}</h3>
+    <div class="row header text-center">
+      <div class="col col-20">
+        Série / RGN
+      </div>
+      <div class="col col-20">
+        RGD
+      </div>
+      <div class="col col-20">
+        {{animal.AnimalAGCriador[0].mvp}}MGT{{animal.rc == 1?'e':''}}
+      </div>
+      <div class="col col-20">
+        Acurácia
+      </div>
+      <div class="col col-20">
+        Top
+      </div>
+    </div>
+    <div class="row body text-center">
+      <div class="col col-20">
+        {{animal.serie}} {{animal.rgn}}
+      </div>
+      <div class="col col-20">
+        {{animal.rgd}}
+      </div>
+      <div class="col col-20">
+        {{animal.AnimalAGCriador[0].mgt}}
+      </div>
+      <div class="col col-20">
+        {{animal.AnimalAGCriador[0].amgt}}
+      </div>
+      <div class="col col-20">
+        {{animal.AnimalAGCriador[0].mgttop}}%
+      </div>
+    </div>
+    <div class="row header text-center" style="border-top:2px solid #fff;">
+      <div class="col col-20" ng-hide="consultaAvancada" ng-show="nomeDep != 'MGTe'">
+        {{animal.AnimalAGCriador[0].mvp}}{{nomeDep}}
+      </div>
+      <div class="col col-20" ng-hide="consultaAvancada" ng-show="nomeDep != 'MGTe'">
+        Acurácia
+      </div>
+      <div class="col col-20" ng-hide="consultaAvancada" ng-show="nomeDep != 'MGTe'">
+        Top
+      </div>
+      <div class="col" ng-class="(nomeDep != 'MGTe' && !consultaAvancada)?'col-20':'col-50'">
+        Sexo
+      </div>
+      <div class="col" ng-class="(nomeDep != 'MGTe' && !consultaAvancada)?'col-20':'col-50'">
+        Dt. Nasc.
+      </div>
+    </div>
+    <div class="row body text-center">
+      <div class="col col-20" ng-hide="consultaAvancada" ng-show="nomeDep != 'MGTe'">
+        {{animal[tblValorDep][0][cmpValorDep]}}
+      </div>
+      <div class="col col-20" ng-hide="consultaAvancada" ng-show="nomeDep != 'MGTe'">
+        {{animal[tblAcuraciaDep][0][cmpAcuraciaDep]}}
+      </div>
+      <div class="col col-20" ng-hide="consultaAvancada" ng-show="nomeDep != 'MGTe'">
+        {{animal[tblTopDep][0][cmpTopDep]}}%
+      </div>
+      <div class="col" ng-class="(nomeDep != 'MGTe' && !consultaAvancada)?'col-20':'col-50'">
+        {{verificaSexoAnimal(animal.sx)}}
+      </div>
+      <div class="col" ng-class="(nomeDep != 'MGTe' && !consultaAvancada)?'col-20':'col-50'">
+        {{verificaDataNascimento(animal.dt_nasc)}}
+      </div>
+    </div>
+    <h4 class="text-center" style="font-size:14px;"><span style="float:left; font-size:0.8em; margin:3px 0 0 16px; font-weight:normal;"><i class="icon ion-ios-arrow-left"></i></span> Deps MGT{{animal.rc == 1?'e':''}} <span style="float:right; font-size:0.8em; margin:3px 16px 0 0; font-weight:normal;"><i class="icon ion-ios-arrow-right"></i></span></h4>
+    <ion-scroll direction="x" ng-if="animal.rc == 1">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DIPP</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddipp}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adipp * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddipp}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}D3P</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp30}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp30 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp30}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}MP120</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].dmpp120}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ampp120 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].dmpp120}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}MP210</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].dmpp240}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ampp240 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].dmpp240}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP210</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp240}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp240 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp240}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DSTAY</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddstay}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adstay * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddstay}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DAOL</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddaol}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adaol * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddaol}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+
+    <ion-scroll direction="x" ng-if="animal.rc == 2">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}MP120</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].dmpp120}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ampp120 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].dmpp120}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DIPP</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddipp}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adipp * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddipp}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPG</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpg}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpg * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpg}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+
+    <ion-scroll direction="x" ng-if="animal.rc == 4">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP120</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp120}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp120 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp120}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DIPP</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddipp}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adipp * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddipp}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPG</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpg}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpg * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpg}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+
+    <ion-scroll direction="x" ng-if="animal.rc == 8">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}MP120</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].dmpp120}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ampp120 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].dmpp120}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP120</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp120}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp120 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp120}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe455}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DIPP</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddipp}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adipp * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddipp}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+    <div class="row text-center labels">
+      <div class="col">
+        Legenda: 
+      </div>
+      <div class="col">
+        @: Acurácia
+      </div>
+      <div class="col">
+        ®: TOP
+      </div>
+    </div>
+    <h4 class="text-center" style="font-size:14px;"><span style="float:left; font-size:0.8em; margin:3px 0 0 16px; font-weight:normal;"><i class="icon ion-ios-arrow-left"></i></span> Deps Reprodução <span style="float:right; font-size:0.8em; margin:3px 16px 0 0; font-weight:normal;"><i class="icon ion-ios-arrow-right"></i></span></h4>
+
+    <ion-scroll direction="x">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPG</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpg}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpg * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpg}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DIPP</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddipp}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adipp * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddipp}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}D3P</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp30}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp30 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp30}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DSTAY</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddstay}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adstay * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddstay}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPAC</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpac}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpac * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpac}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPE450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpe455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpe455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpe455}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+    <div class="row text-center labels">
+      <div class="col">
+        Legenda: 
+      </div>
+      <div class="col">
+        @: Acurácia
+      </div>
+      <div class="col">
+        ®: TOP
+      </div>
+    </div>
+    <h4 class="text-center" style="font-size:14px;"><span style="float:left; font-size:0.8em; margin:3px 0 0 16px; font-weight:normal;"><i class="icon ion-ios-arrow-left"></i></span> Deps Crescimento <span style="float:right; font-size:0.8em; margin:3px 16px 0 0; font-weight:normal;"><i class="icon ion-ios-arrow-right"></i></span></h4>
+
+    <ion-scroll direction="x">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}MP120</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].dmpp120}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ampp120 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].dmpp120}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}MP210</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].dmpp240}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ampp240 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].dmpp240}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP210</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp240}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp240 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp240}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP365</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp365}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp365 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp365}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DP450</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpp455}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpp455 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpp455}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+    <div class="row text-center labels">
+      <div class="col">
+        Legenda: 
+      </div>
+      <div class="col">
+        @: Acurácia
+      </div>
+      <div class="col">
+        ®: TOP
+      </div>
+    </div>
+    <h4 class="text-center" style="font-size:14px;"><span style="float:left; font-size:0.8em; margin:3px 0 0 16px; font-weight:normal;"><i class="icon ion-ios-arrow-left"></i></span> Deps Carcaça e Eficiência Alimentar <span style="float:right; font-size:0.8em; margin:3px 16px 0 0; font-weight:normal;"><i class="icon ion-ios-arrow-right"></i></span></h4>
+
+    <ion-scroll direction="x">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DAOL</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddaol}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adaol * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddaol}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DACAB</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddp8}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adp8 * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddp8}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DMAR</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddmar}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].admar * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddmar}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DMAC</h4>
+        <p class="v1">{{animal.AnimalAGCriador5[0].ddmac}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador5[0].admac * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador5[0].tdmac}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPCQ</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddpcq}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adpcq * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddpcq}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DPPC</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddppc}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adppc * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddppc}}%</p>
+      </div>      
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DCAR</h4>
+        <p class="v1">{{animal.AnimalAGCriador5[0].ddcar}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador5[0].adcar * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador5[0].tdcar}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DIMS</h4>
+        <p class="v1">{{animal.AnimalAGCriador5[0].ddims}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador5[0].adims * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador5[0].tdims}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+    <div class="row text-center labels">
+      <div class="col">
+        Legenda: 
+      </div>
+      <div class="col">
+        @: Acurácia
+      </div>
+      <div class="col">
+        ®: TOP
+      </div>
+    </div>
+    <h4 class="text-center" style="font-size:14px;"><span style="float:left; font-size:0.8em; margin:3px 0 0 16px; font-weight:normal;"><i class="icon ion-ios-arrow-left"></i></span> Deps Morfológicas <span style="float:right; font-size:0.8em; margin:3px 16px 0 0; font-weight:normal;"><i class="icon ion-ios-arrow-right"></i></span></h4>
+
+    <ion-scroll direction="x">
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DDES</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddes}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].ades * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddes}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DDPS</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddps}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adps * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddps}}%</p>
+      </div>
+      <div class="deps">
+        <h4>{{animal.AnimalAGCriador[0].mvp}}DDMS</h4>
+        <p class="v1">{{animal.AnimalAGCriador[0].ddms}}</p>
+        <p class="v2">@ {{animal.AnimalAGCriador[0].adms * 100 | number:0}}</p>
+        <p class="v3">® {{animal.AnimalAGCriador4[0].ddms}}%</p>
+      </div>
+      <div class="clearfix"></div>
+    </ion-scroll>
+    <div class="row text-center labels">
+      <div class="col">
+        Legenda: 
+      </div>
+      <div class="col">
+        @: Acurácia
+      </div>
+      <div class="col">
+        ®: TOP
+      </div>
+    </div>
+
+    <h4 class="text-center" style="font-size:14px;">Árvore Genealógica</h4>
+    <ion-scroll direction="xy" delegate-handle="arvore-genealogica" style="height: 50vh; background-color:#398fd1;">
+      <div style="width:250%;">
+        <div class="tree">
+          <ul>
+            <li>
+              <a href="javascript:;">{{animal.serie}} {{animal.rgn}} {{animal.rgd}}<br/><b>{{animal.nome}} </b><br/>MGTe {{animal.AnimalAGCriador[0].mgt}} @ {{animal.AnimalAGCriador[0].amgt}} TOP {{animal.AnimalAGCriador[0].mgttop}}%</a>
+              <ul ng-if="!consultaPublica">
+                <li>
+                  <a href="#/app/visualizar-animal/{{arvoreGenealogica.pai.cga}}" class="m">{{arvoreGenealogica.pai.serie}} {{arvoreGenealogica.pai.rgn}} {{arvoreGenealogica.pai.rgd}}<br/><b>{{arvoreGenealogica.pai.nome}} </b><br/>MGTe {{arvoreGenealogica.pai.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.pai.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.pai.AnimalAGCriador[0].mgttop}}%</a>
+                  <ul>
+                    <li><a href="#/app/visualizar-animal/{{arvoreGenealogica.pai.pai.cga}}" class="m">{{arvoreGenealogica.pai.pai.serie}} {{arvoreGenealogica.pai.pai.rgn}} {{arvoreGenealogica.pai.pai.rgd}}<br/><b>{{arvoreGenealogica.pai.pai.nome}} </b><br/>MGTe {{arvoreGenealogica.pai.pai.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.pai.pai.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.pai.pai.AnimalAGCriador[0].mgttop}}%</a></li>
+                    <li><a href="#/app/visualizar-animal/{{arvoreGenealogica.pai.mae.cga}}" class="f">{{arvoreGenealogica.pai.mae.serie}} {{arvoreGenealogica.pai.mae.rgn}} {{arvoreGenealogica.pai.mae.rgd}}<br/><b>{{arvoreGenealogica.pai.mae.nome}} </b><br/>MGTe {{arvoreGenealogica.pai.mae.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.pai.mae.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.pai.mae.AnimalAGCriador[0].mgttop}}%</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#/app/visualizar-animal/{{arvoreGenealogica.mae.cga}}" class="f">{{arvoreGenealogica.mae.serie}} {{arvoreGenealogica.mae.rgn}} {{arvoreGenealogica.mae.rgd}}<br/><b>{{arvoreGenealogica.mae.nome}} </b><br/>MGTe {{arvoreGenealogica.mae.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.mae.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.mae.AnimalAGCriador[0].mgttop}}%</a>
+                  <ul>
+                    <li><a href="#/app/visualizar-animal/{{arvoreGenealogica.mae.pai.cga}}" class="m">{{arvoreGenealogica.mae.pai.serie}} {{arvoreGenealogica.mae.pai.rgn}} {{arvoreGenealogica.mae.pai.rgd}}<br/><b>{{arvoreGenealogica.mae.pai.nome}} </b><br/>MGTe {{arvoreGenealogica.mae.pai.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.mae.pai.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.mae.pai.AnimalAGCriador[0].mgttop}}%</a></li>
+                    <li><a href="#/app/visualizar-animal/{{arvoreGenealogica.mae.mae.cga}}" class="f">{{arvoreGenealogica.mae.mae.serie}} {{arvoreGenealogica.mae.mae.rgn}} {{arvoreGenealogica.mae.mae.rgd}}<br/><b>{{arvoreGenealogica.mae.mae.nome}} </b><br/>MGTe {{arvoreGenealogica.mae.mae.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.mae.mae.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.mae.mae.AnimalAGCriador[0].mgttop}}%</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul ng-if="consultaPublica">
+                <li>
+                  <a href="javascript:;" class="m">{{arvoreGenealogica.pai.serie}} {{arvoreGenealogica.pai.rgn}} {{arvoreGenealogica.pai.rgd}}<br/><b>{{arvoreGenealogica.pai.nome}} </b><br/>MGTe {{arvoreGenealogica.pai.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.pai.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.pai.AnimalAGCriador[0].mgttop}}%</a>
+                  <ul>
+                    <li><a href="javascript:;" class="m">{{arvoreGenealogica.pai.pai.serie}} {{arvoreGenealogica.pai.pai.rgn}} {{arvoreGenealogica.pai.pai.rgd}}<br/><b>{{arvoreGenealogica.pai.pai.nome}} </b><br/>MGTe {{arvoreGenealogica.pai.pai.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.pai.pai.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.pai.pai.AnimalAGCriador[0].mgttop}}%</a></li>
+                    <li><a href="javascript:;" class="f">{{arvoreGenealogica.pai.mae.serie}} {{arvoreGenealogica.pai.mae.rgn}} {{arvoreGenealogica.pai.mae.rgd}}<br/><b>{{arvoreGenealogica.pai.mae.nome}} </b><br/>MGTe {{arvoreGenealogica.pai.mae.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.pai.mae.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.pai.mae.AnimalAGCriador[0].mgttop}}%</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:;" class="f">{{arvoreGenealogica.mae.serie}} {{arvoreGenealogica.mae.rgn}} {{arvoreGenealogica.mae.rgd}}<br/><b>{{arvoreGenealogica.mae.nome}} </b><br/>MGTe {{arvoreGenealogica.mae.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.mae.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.mae.AnimalAGCriador[0].mgttop}}%</a>
+                  <ul>
+                    <li><a href="javascript:;" class="m">{{arvoreGenealogica.mae.pai.serie}} {{arvoreGenealogica.mae.pai.rgn}} {{arvoreGenealogica.mae.pai.rgd}}<br/><b>{{arvoreGenealogica.mae.pai.nome}} </b><br/>MGTe {{arvoreGenealogica.mae.pai.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.mae.pai.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.mae.pai.AnimalAGCriador[0].mgttop}}%</a></li>
+                    <li><a href="javascript:;" class="f">{{arvoreGenealogica.mae.mae.serie}} {{arvoreGenealogica.mae.mae.rgn}} {{arvoreGenealogica.mae.mae.rgd}}<br/><b>{{arvoreGenealogica.mae.mae.nome}} </b><br/>MGTe {{arvoreGenealogica.mae.mae.AnimalAGCriador[0].mgt}} @ {{arvoreGenealogica.mae.mae.AnimalAGCriador[0].amgt}} TOP {{arvoreGenealogica.mae.mae.AnimalAGCriador[0].mgttop}}%</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-modal-view style="background: url(img/bg-veganators.jpg) no-repeat center center; background-size: cover;">
+  <ion-header-bar class="bar-stable bar bar-header bar-pneuz">
+    <h1 class="title" style="color:#fff !important">Seja um VegaNator!</h1>
+    <button class="button button-icon fa fa-times" style="color:#fff !important" ng-click="modalCadastroMe.hide()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form novalidate ng-submit="cadastrarUsuarioMe(formCadastroMe, dadosCadastroMe)" name="formCadastroMe">
+      <div class="list">
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" >
+          <span class="input-label" style="color:#006600;">Produto</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #006600; width:96%; color:#006600;" name="produto" ng-model="dadosCadastroMe.produto">
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" >
+          <span class="input-label" style="color:#006600;">Empresa</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #006600; width:96%; color:#006600;" name="empresa" ng-model="dadosCadastroMe.empresa">
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" >
+          <span class="input-label" style="color:#006600;">whatsapp</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #006600; width:96%; color:#006600;" id="whatsapp" name="tipo" ng-model="dadosCadastroMe.whatsapp">
+        </label>
+        <label class="item item-input item-stacked-label" style="background-color: transparent; border:none;" >
+          <span class="input-label" style="color:#006600;">Ingrediente</span>
+          <input type="text" style="background-color:transparent; border-bottom:1px solid #006600; width:96%; color:#006600;" id="ingrediente" name="ingrediente" ng-model="dadosCadastroMe.ingrediente" >
+        </label>
+        <label>
+          <div class="padding">
+            <button class="button button-block button-positive" style="margin-bottom:0;"><i class="fa fa-save"></i> Go vegan!</button>
+          </div>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+

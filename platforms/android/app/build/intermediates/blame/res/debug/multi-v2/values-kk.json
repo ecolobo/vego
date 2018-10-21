@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Projetos\\DANIEL\\vego2\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ficolas Nontes\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3e791e3aff9c21e99969d36ac2803d44\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projetos\\DANIEL\\vego\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ficolas Nontes\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3e791e3aff9c21e99969d36ac2803d44\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
