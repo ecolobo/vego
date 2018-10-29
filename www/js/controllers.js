@@ -903,8 +903,8 @@ angular.module('starter.controllers', ['ionic', 'ngCordova'])
       }
   
       function sendPhoto(photo) {
-        var key = "AIzaSyBWJfLgOlWgm5FJfNCcpmwmz4BJUtShLbM";// nicolas
-        //var key = "AIzaSyASShvB0Q_nEs7XrmvxIvIK60DHdnJUgWo"; //daniel
+        
+        var key = "AIzaSyASShvB0Q_nEs7XrmvxIvIK60DHdnJUgWo"; //daniel
         var urlGoogle = 'https://vision.googleapis.com/v1/images:annotate?key=' + key;
         var enviado = sendBase64(photo, 'TEXT_DETECTION', 1);
         $http.post(urlGoogle, enviado).then(function (data) {
